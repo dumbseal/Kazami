@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казами Юко - Летний сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffacd; /* Светло-желтый фон, ассоциируется с летом */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #2f4f4f;
+            overflow-y: auto;
+            animation: fadeInBody 2s ease-out;
+        }
+
+        @keyframes fadeInBody {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        header {
+            background-color: rgba(255, 165, 0, 0.7); /* Оранжевый фон */
+            padding: 20px;
+            color: white;
+            font-size: 2.5em;
+            border-bottom: 5px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .content {
+            padding: 20px;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInContent 2s ease-out forwards;
+        }
+
+        @keyframes fadeInContent {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .image-container {
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInImage 2s ease-out 1s forwards;
+        }
+
+        @keyframes fadeInImage {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .sunflowers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.8;
+        }
+
+        .sunflowers div {
+            position: absolute;
+            font-size: 2em;
+            animation: fall 10s linear infinite, rotate 5s linear infinite; /* Добавлено вращение */
+        }
+
+        @keyframes fall {
+            0% { top: -10px; }
+            100% { top: 100%; }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); } /* Вращение подсолнухов */
+        }
+
+        .sunflower1 { left: 20%; animation-duration: 12s; }
+        .sunflower2 { left: 50%; animation-duration: 8s; }
+        .sunflower3 { left: 80%; animation-duration: 15s; }
+        .sunflower4 { left: 60%; animation-duration: 18s; }
+        .sunflower5 { left: 40%; animation-duration: 20s; }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: none; /* Скрываем таблицу по умолчанию */
+            animation: fadeInTable 2s ease-out 2s forwards;
+        }
+
+        @keyframes fadeInTable {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            animation: fadeInText 2s ease-out 3s forwards;
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .image-container img {
+            max-width: 30%; /* Уменьшаем размер картинки */
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer; /* Курсор указывает, что картинка кликабельная */
+        }
+
+        .toggle-button {
+            background-color: #ffa500;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .toggle-button:hover {
+            background-color: #ff7f00;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        Казами Юко!
+    </header>
+
+    <div class="sunflowers" id="sunflowers-container">
+        <!-- Подсолнухи будут добавляться здесь -->
+    </div>
+
+    <div class="content">
+        <h1>Добро пожаловать на сайт о Казами Юко!</h1>
+        <p>Погрузитесь в магию и атмосферу летнего праздника вместе с нашей любимой героиней.</p>
+
+        <h2>Краткая характеристика Казами Юко:</h2>
+        <p>Юка Казами — могущественная екай из серии "Проект Тохо". Обладает силой, сверхчеловеческими способностями и хлорокинезом. Её любовь к цветам и способность манипулировать ими делают её уникальной личностью. В разных играх её действия колеблются между антагонизмом и поиском силы и знаний. Её образ сочетает решительность и игривый характер, что делает её одной из самых ярких и необычных фигур в истории серии.</p>
+
+        <div class="image-container" onclick="showSunflowers()">
+            <img src="https://i.ytimg.com/vi/F4im113svkc/maxresdefault.jpg" alt="Казами Юко" />
+        </div>
+
+        <!-- Кнопка для раскрытия таблицы -->
+        <button class="toggle-button" onclick="toggleTable()">Развернуть характеристику</button>
+
+        <div id="table-container">
+            <table id="characteristics-table">
+                <tr>
+                    <th>Характеристика</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td>Имя</td>
+                    <td>Юка Казами</td>
+                </tr>
+                <tr>
+                    <td>Происхождение</td>
+                    <td>Из серии "Проект Тохо" (Kaleido Star)</td>
+                </tr>
+                <tr>
+                    <td>Основные черты</td>
+                    <td>Сила, решительность, игривость, магия</td>
+                </tr>
+                <tr>
+                    <td>Роль в истории</td>
+                    <td>Антагонист и героиня, исследующая магию и власть</td>
+                </tr>
+                <tr>
+                    <td>Отношения с окружающими</td>
+                    <td>Занимается интригами и поиском силы через магию</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Пусть это лето принесет вам радость и вдохновение, как в ярких и тёплых днях!</p>
+    </div>
+
+    <script>
+        function toggleTable() {
+            var table = document.getElementById("characteristics-table");
+            if (table.style.display === "none" || table.style.display === "") {
+                table.style.display = "table";
+            } else {
+                table.style.display = "none";
+            }
+        }
+
+        function showSunflowers() {
+            var sunflowersContainer = document.getElementById("sunflowers-container");
+            for (let i = 0; i < 50; i++) { // Создаем 50 подсолнухов
+                var sunflower = document.createElement("div");
+                sunflower.innerHTML = "🌻";
+                sunflower.style.fontSize = Math.random() * 3 + 1 + "em"; // Случайный размер
+                sunflower.style.left = Math.random() * 100 + "%"; // Случайное положение по горизонтали
+                sunflower.style.animationDuration = Math.random() * 5 + 5 + "s"; // Случайная скорость падения
+                sunflower.style.animationName = "fall, rotate"; // Падение и вращение
+                sunflowersContainer.appendChild(sunflower);
+            }
+        }
+    </script>
+
+</body>
+</html>
